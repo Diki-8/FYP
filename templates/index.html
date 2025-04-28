@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block title %} Home | Paws Home {% endblock title %}
+
+{% block body %}
+<div class="container">
+    <!-- Carousel Section -->
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/static/image/dog.jpg" class="d-block w-100 img-fluid" style="height: 500px; object-fit: cover;" alt="Dog">
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 p-3 rounded">
+                    <h1>Welcome to Paws Home</h1>
+                    <p>A loving stay for your furry friends.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="/static/image/dogpic.jpg" class="d-block w-100 img-fluid" style="height: 500px; object-fit: cover;" alt="Dogs sitting">
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 p-3 rounded">
+                    <h1>Book with Us</h1>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="/static/image/services1.jpg" class="d-block w-100 img-fluid" style="height: 500px; object-fit: cover;" alt="Dog Playing">
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 p-3 rounded">
+                    <h1>Explore Our Services</h1>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- Services Section -->
+<div class="container my-5">
+  <h1 class="text-center mb-4">Our Services</h1>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+      <!-- Dog Boarding Card -->
+      <div class="col">
+          <div class="card h-100 shadow-sm">
+              <img src="/static/image/apso.avif" class="card-img-top img-fluid" style="height: 250px; object-fit: cover;" alt="Dog Boarding">
+              <div class="card-body">
+                  <h5 class="card-title">Dog Boarding</h5>
+                  <p class="card-text">Providing your furry friend with a safe, caring environment.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                          <a href="{% url 'boarding' %}" class="btn btn-sm btn-outline-primary">View</a>
+                          <button type="button" class="btn btn-sm btn-outline-success">
+                            <a href="{% url 'booking_boarding' %}" class="text-success text-decoration-none">Book</a>
+                        </button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- Dog Daycare Card -->
+      <div class="col">
+          <div class="card h-100 shadow-sm">
+              <img src="/static/image/dogplaying.avif" class="card-img-top img-fluid" style="height: 250px; object-fit: cover;" alt="Dog Daycare">
+              <div class="card-body">
+                  <h5 class="card-title">Dog Daycare</h5>
+                  <p class="card-text">Your dog’s home away from home with expert care.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                          <a href="{% url 'daycare' %}" class="btn btn-sm btn-outline-primary">View</a>
+                          <button type="button" class="btn btn-sm btn-outline-success">
+                            <a href="{% url 'booking_daycare' %}" class="text-success text-decoration-none">Book</a>
+                        </button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- Dog Grooming Card -->
+      <div class="col">
+          <div class="card h-100 shadow-sm">
+              <img src="/static/image/dogbath.avif" class="card-img-top img-fluid" style="height: 250px; object-fit: cover;" alt="Dog Grooming">
+              <div class="card-body">
+                  <h5 class="card-title">Dog Grooming</h5>
+                  <p class="card-text">Professional grooming for your dog’s comfort and style.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                          <a href="{% url 'petgrooming' %}" class="btn btn-sm btn-outline-primary">View</a>
+                          <button type="button" class="btn btn-sm btn-outline-success">
+                            <a href="{% url 'booking_grooming' %}" class="text-success text-decoration-none">Book</a>
+                        </button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+{% endblock body %}

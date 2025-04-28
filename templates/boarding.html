@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %} Dog Boarding | Paws Home {% endblock title %}
+
+{% block body %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/boarding.css' %}">
+
+<!-- Header Section -->
+<div class="about-header text-center py-5 bg-light">
+    <h1 class="display-4">Dog Boarding at Paws Home</h1>
+    <p class="lead">A safe, comfortable, and loving environment for your furry companion when you’re away.</p>
+</div>
+
+<!-- Content Section -->
+<div class="container my-5">
+    <div class="row">
+        <!-- Image Section -->
+        <div class="col-md-6 mb-4">
+            <img src="{% static 'image/doghostel.jpg' %}" class="img-fluid rounded shadow" alt="Dog Boarding at Paws Home">
+        </div>
+
+        <!-- Text Section -->
+        <div class="col-md-6">
+            <h2 class="text-primary mb-4">Why Choose Our Boarding Services?</h2>
+            <p>At Paws Home, we provide **a comfortable stay, nutritious meals, and caring supervision** to ensure your dog feels at home while you're away.</p>
+
+            <div class="boarding-features">
+                <h3 class="h5 mt-4">Safe & Secure Stay</h3>
+                <p>Spacious, climate-controlled boarding areas with 24/7 supervision.</p>
+
+                <h3 class="h5 mt-4">Comfortable Sleeping Spaces</h3>
+                <p>Soft bedding and individualized sleeping arrangements for a stress-free experience.</p>
+
+                <h3 class="h5 mt-4">Daily Exercise & Playtime</h3>
+                <p>Structured walks, interactive play sessions, and plenty of outdoor time.</p>
+
+                <h3 class="h5 mt-4">Healthy Meals & Dietary Plans</h3>
+                <p>Nutritious, balanced meals customized to your dog’s dietary needs.</p>
+
+                <h3 class="h5 mt-4">24/7 Supervision & Care</h3>
+                <p>Dedicated caregivers ensuring your pet’s comfort, health, and well-being.</p>
+
+                <div class="text-center mt-4"> <a href="{% url 'booking_boarding' %}" class="btn btn-lg btn-success px-4 py-2"> <i class="bi bi-calendar-check"></i> Book Now </a> </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Additional Info Section -->
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="bg-light p-4 rounded">
+                <h3 class="text-center mb-4">Is Boarding Right for Your Dog?</h3>
+                <p>Boarding is ideal for:</p>
+                <ul>
+                    <li>Dogs who need overnight care while their owners travel</li>
+                    <li>Puppies learning independence in a structured environment</li>
+                    <li>Pets requiring constant supervision or medical attention</li>
+                    <li>Owners who need flexible, reliable care solutions</li>
+                </ul>
+                <p class="mt-3">We ensure **a home-like experience** with attention to your dog's unique needs. Let us know if your pet requires special care!</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}

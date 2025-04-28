@@ -1,0 +1,88 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fefdfb;
+    color: #333;
+}
+
+.about-header {
+    background-color: #f1f8ff; 
+    color: #2e5d7d;
+    padding: 4rem 2rem;
+    border-radius: 8px;
+}
+
+.about-header h1 {
+    color: #1e88e5; 
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+.about-header p {
+    color: #4e6e8e;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+.container h2 {
+    color: #1e88e5;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.grooming-features h3 {
+    color: #388e3c; 
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+.grooming-features p {
+    color: #5f6368;
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+}
+
+.text-primary {
+    color: #1e88e5 !important;
+}
+
+ul {
+    padding-left: 20px;
+    color: #4a4a4a;
+}
+
+ul li {
+    margin-bottom: 0.5rem;
+}
+
+.bg-light {
+    background-color: #f7fafd !important;
+    border: 1px solid #e0e0e0;
+}
+
+img {
+    border: 3px solid #bbdefb; 
+    border-radius: 8px;
+}
+
+.shadow {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.rounded {
+    border-radius: 8px !important;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .about-header h1 {
+        font-size: 2rem;
+    }
+
+    .about-header p {
+        font-size: 1rem;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+}

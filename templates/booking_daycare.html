@@ -1,0 +1,219 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Book Daycare | Paws Home{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/bookingdaycare.css' %}">
+{% endblock %}
+
+{% block body %}
+<div class="booking-container">
+    <h1 class="text-center mb-4">Book Daycare Service</h1>
+{% comment %}     
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        {% endfor %}
+    {% endif %} {% endcomment %}
+
+    <form method="post" id="bookingForm" action="{% url 'booking_daycare' %}">
+        {% csrf_token %}
+        
+        <input type="hidden" name="service_type" id="service_type" value="daycare">
+        
+        <!-- Day Care Services -->
+        <div class="service-content active" id="daycare-content">
+            <h4>Select Day Care Duration</h4>
+            <div class="duration-options">
+                <div class="duration-option">
+                    <input type="radio" name="daycare_duration" id="1hour" value="1" class="d-none" required>
+                    <label for="1hour" class="w-100 h-100">
+                        1 Hour<br>
+                        <small>Rs. 300</small>
+                    </label>
+                </div>
+                <div class="duration-option">
+                    <input type="radio" name="daycare_duration" id="4hours" value="4" class="d-none" required>
+                    <label for="4hours" class="w-100 h-100">
+                        4 Hours<br>
+                        <small>Rs. 800</small>
+                    </label>
+                </div>
+                <div class="duration-option">
+                    <input type="radio" name="daycare_duration" id="fullday" value="8" class="d-none" required>
+                    <label for="fullday" class="w-100 h-100">
+                        Full Day (8hr)<br>
+                        <small>Rs. 1200</small>
+                    </label>
+                </div>
+            </div>
+            
+            <div class="price-display" id="daycare-price">
+                Selected Duration: None | Total: Rs. 0
+            </div>
+        </div>
+        
+        <!-- Dog Information -->
+        <div class="dog-info-section">
+            <h5>Dog Information</h5>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="dog_name" class="form-label">Dog Name</label>
+                    <input type="text" class="form-control" id="dog_name" name="dog_name" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="dog_breed" class="form-label">Breed</label>
+                    <select class="form-control" id="dog_breed" name="dog_breed" required>
+                        <option value="" disabled selected>Select a breed</option>
+                        <option value="beagle">Beagle</option>
+                        <option value="bhote">Bhote Kukur</option>
+                        <option value="boxer">Boxer</option>
+                        <option value="bulldog">Bulldog</option>
+                        <option value="chihuahua">Chihuahua</option>
+                        <option value="cocker">Cocker Spaniel</option>
+                        <option value="dalmatian">Dalmatian</option>
+                        <option value="damchi">Damchi</option>
+                        <option value="german">German Shepherd</option>
+                        <option value="golden">Golden Retriever</option>
+                        <option value="husky">Siberian Husky</option>
+                        <option value="japanese">Japanese Spitz</option>
+                        <option value="lab">Labrador Retriever</option>
+                        <option value="lhasa">Lhasa Apso</option>
+                        <option value="maltese">Maltese</option>
+                        <option value="pomeranian">Pomeranian</option>
+                        <option value="poodle">Poodle</option>
+                        <option value="pug">Pug</option>
+                        <option value="rottweiler">Rottweiler</option>
+                        <option value="shih">Shih Tzu</option>
+                        <option value="spaniel">English Springer Spaniel</option>
+                        <option value="tibetan">Tibetan Mastiff</option>
+                        <option value="yorkie">Yorkshire Terrier</option>
+                    </select>
+                </div>
+                
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="dog_size" class="form-label">Size</label>
+                    <select class="form-select" id="dog_size" name="dog_size" required>
+                        <option value="" disabled selected>Select size</option>
+                        <option value="small">Small (under 20 lbs)</option>
+                        <option value="medium">Medium (20-50 lbs)</option>
+                        <option value="large">Large (50-90 lbs)</option>
+                    </select>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="dog_age" class="form-label">Age</label>
+                    <input type="number" class="form-control" id="dog_age" name="dog_age" min="0" max="30" required oninput="checkAgeLimit(this)">
+                </div>
+                
+                <script>
+                function checkAgeLimit(input) {
+                    if (input.value > 30) {
+                        input.value = 30;
+                    }
+                }
+                </script>
+            </div>
+            <div class="mb-3">
+                <label for="health_notes" class="form-label">Health Notes</label>
+                <textarea class="form-control" id="health_notes" name="health_notes" rows="2"></textarea>
+                <small class="text-muted">Any allergies, medical conditions, or special needs we should know about</small>
+            </div>
+        </div>
+        
+        <!-- Date Selection -->
+        <div class="mb-4">
+            <h5>Select Date</h5>
+            <input type="date" class="form-control" name="date" 
+                   min="{{ min_date }}" value="{{ form.date.value|default_if_none:'' }}" required>
+        </div>
+        
+        <!-- Special Requests -->
+        <div class="mb-4">
+            <h5>Special Requests</h5>
+            <textarea class="form-control" name="special_requests" rows="3" 
+                      placeholder="Any special instructions for our staff..."></textarea>
+        </div>
+        
+        <button type="submit" class="btn btn-primary w-100 py-2">
+            <i class="bi bi-calendar-check me-2"></i>Confirm Booking
+        </button>
+    </form>
+</div>
+
+<!-- Success Modal -->
+<div class="modal fade" id="bookingSuccessModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Booking Confirmed!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Your booking has been successfully created. You can view it in your bookings.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <a href="{% url 'mybookings' %}" class="btn btn-primary">View Bookings</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Define duration prices
+    const durationPrices = {
+        '1hour': 300,
+        '4hours': 800,
+        'fullday': 1200
+    };
+
+    // Update price display
+    function updatePriceDisplay() {
+        const selectedDuration = document.querySelector('input[name="daycare_duration"]:checked');
+        let durationName = 'None';
+        let price = 0;
+
+        if (selectedDuration) {
+            const label = selectedDuration.nextElementSibling;
+            durationName = label.childNodes[0].textContent.trim();
+            price = durationPrices[selectedDuration.id];
+        }
+
+        document.getElementById('daycare-price').textContent = 
+            `Selected Duration: ${durationName} | Total: Rs. ${price}`;
+    }
+
+    // Duration option selection
+    document.querySelectorAll('.duration-option').forEach(option => {
+        option.addEventListener('click', function() {
+            const radio = this.querySelector('input[type="radio"]');
+            radio.checked = true;
+
+            document.querySelectorAll('.duration-option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            this.classList.add('selected');
+            
+            updatePriceDisplay();
+        });
+    });
+    
+    // Set minimum date
+    const today = new Date().toISOString().split('T')[0];
+    document.querySelector('input[type="date"]').min = today;
+
+    // Initialize price display
+    updatePriceDisplay();
+});
+</script>
+{% endblock %}

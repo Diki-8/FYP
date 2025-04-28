@@ -1,0 +1,88 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #faf3e0; 
+    color: #333;
+}
+
+/* Header Section */
+.about-header {
+    background-color: #f4e1c1; 
+    color: #5a3e2b;
+    padding: 4rem 2rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.about-header h1 {
+    color: #d2691e; 
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+.about-header p {
+    color: #6b4c3b;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+/* Content Box */
+.aboutus {
+    background-color: #ffffff;
+    border: 1px solid #e0c3a5;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Headings */
+.container h2 {
+    color: #d2691e;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+/* Paragraphs */
+.text-muted {
+    color: #5a5a5a;
+}
+
+/* List Styling */
+ul {
+    padding-left: 20px;
+    color: #555;
+}
+
+ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Image Styling */
+img {
+    width: 60%; 
+    max-width: 400px; 
+    display: block;
+    margin: 0 auto; 
+    border: 3px solid #f4e1c1; 
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Subtle Shadows */
+.shadow-sm {
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+    .about-header h1 {
+        font-size: 2rem;
+    }
+
+    .about-header p {
+        font-size: 1rem;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+}

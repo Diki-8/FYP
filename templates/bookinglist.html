@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}My Bookings | Paws Home{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/bookinglist.css' %}">
+{% endblock %}
+
+{% block body %}
+<div class="page-content">
+    <div class="container mt-4">
+        <h2 class="text-center mb-4">My Bookings</h2>
+        <div class="table-responsive">
+            <table class="table table-hover rounded">
+                <thead class="table-light">
+                    <tr>
+                        <th>Service</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Dog</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for booking in bookings %}
+                    <tr>
+                        <td>{{ booking.get_service_display }}</td>
+                        <td>{{ booking.date }}</td>
+                        <td>
+                            {% if booking.time_slot %}
+                                {{ booking.time_slot.start_time|time:"g:i A" }} - {{ booking.time_slot.end_time|time:"g:i A" }}
+                            {% else %}
+                                N/A
+                            {% endif %}
+                        </td>
+                        <td>{{ booking.dog.name }}</td>
+                        <td>
+                            <span class="badge bg-{% if booking.status == 'confirmed' %}success{% else %}warning{% endif %}">
+                                {{ booking.get_status_display }}
+                            </span>
+                        </td>
+                        <td>
+                            <a href="{% url 'booking_details' booking.id %}" class="btn btn-sm btn-outline-primary">Details</a>
+                            {% if booking.status == 'confirmed' %}
+                            <a href="{% url 'cancel_booking' booking.id %}" class="btn btn-sm btn-outline-danger">Cancel</a>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="6" class="text-center text-muted">No bookings found</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %} Pet Grooming | Paws Home {% endblock title %}
+
+{% block body %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/petgrooming.css' %}">
+
+<!-- Header Section -->
+<div class="about-header text-center py-5 bg-light">
+    <h1 class="display-4">Pet Grooming at Paws Home</h1>
+    <p class="lead">Professional grooming that leaves your pet looking great and feeling their best — because they deserve it.</p>
+</div>
+
+<!-- Content Section -->
+<div class="container my-5">
+    <div class="row">
+        <!-- Image Section -->
+        <div class="col-md-6 mb-4">
+            <img src="{% static 'image/petshower2.jpg' %}" class="img-fluid rounded shadow" alt="Pet being groomed at Paws Home">
+        </div>
+
+        <!-- Text Section -->
+        <div class="col-md-6">
+            <h2 class="text-primary mb-4">Why Choose Our Grooming Services?</h2>
+            <p>At Paws Home, our expert groomers use pet-safe products and gentle techniques to ensure your furry friend enjoys a calm, comfortable grooming experience.</p>
+
+            <div class="grooming-features">
+                <h3 class="h5 mt-4">Bath & Blow-Dry</h3>
+                <p>Deep cleaning and conditioning baths followed by a gentle blow-dry — leaving your pet’s coat soft and shiny.</p>
+
+                <h3 class="h5 mt-4">Hair Trimming & Styling</h3>
+                <p>From simple trims to breed-specific cuts, our groomers tailor each style to match your pet’s personality and comfort.</p>
+
+                <h3 class="h5 mt-4">Nail Clipping & Paw Care</h3>
+                <p>Regular nail trims prevent painful overgrowth and promote proper posture and mobility.</p>
+
+                <h3 class="h5 mt-4">Ear Cleaning</h3>
+                <p>Gentle ear cleaning helps prevent infections and keeps your pet comfortable and healthy.</p>
+
+                <h3 class="h5 mt-4">Teeth Brushing</h3>
+                <p>Fresh breath and dental care go hand in hand — we use pet-friendly toothpaste to support oral hygiene.</p>
+
+                <h3 class="h5 mt-4">De-shedding Treatments</h3>
+                <p>Reduce excessive shedding with specialized tools and techniques to maintain a healthy coat.</p>
+                <div class="text-center mt-4">
+                    <a href="{% url 'booking_grooming' %}" class="btn btn-lg btn-info px-4 py-2">
+                        <i class="bi bi-calendar-check"></i> Book Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Additional Info Section -->
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="bg-light p-4 rounded">
+                <h3 class="text-center mb-4">Grooming is More Than Just Looks</h3>
+                <p>Regular grooming is essential for:</p>
+                <ul>
+                    <li>Maintaining a healthy coat and skin</li>
+                    <li>Preventing matting, ticks, and fleas</li>
+                    <li>Monitoring overall pet health (skin, ears, teeth, etc.)</li>
+                    <li>Enhancing comfort and hygiene</li>
+                </ul>
+                <p class="mt-3">We accommodate pets of all sizes and temperaments. Please inform us of any special care or handling your pet may need.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}

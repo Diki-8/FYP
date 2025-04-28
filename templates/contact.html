@@ -1,0 +1,39 @@
+<!-- home/templates/contact.html -->
+{% extends "base.html" %}
+{% block title %}Contact Us | Paws Home{% endblock title %}
+
+{% block body %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/contactus.css' %}">
+
+<div class="container my-5">
+    <div class="row align-items-center">
+        <div class="col-md-6 mb-4">
+            <div class="image-container">
+                <img src="{% static 'image/contactus1.jpg' %}" class="img-fluid rounded shadow" alt="Person with a dog">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="contact-card p-4 bg-white rounded shadow">
+                <h1 class="text-center mb-4">Contact Us</h1>
+                <form method="post" action="{% url 'contact' %}">
+                    {% csrf_token %}
+                    <div class="form-group mb-3">
+                        <label for="name" class="form-label">Name <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group mb-4">
+                        <label for="message" class="form-label">Message <span class="text-danger">*</span></label>
+                        <textarea class="form-control" id="message" rows="4" name="message" placeholder="Enter your message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}

@@ -1,0 +1,74 @@
+/* static/css/contactus.css */
+:root {
+    --primary-color: #d2691e;
+    --background-color: #faf3e0;
+    --card-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    color: #333;
+}
+
+.contact-card {
+    background-color: #ffffff;
+    border: 1px solid #e0c3a5;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 8px;
+}
+
+.form-control {
+    border: 1px solid #ddd;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 8px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 10px rgba(210, 105, 30, 0.2);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    padding: 12px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #b7591a;
+    border-color: #b7591a;
+}
+
+.image-container img {
+    border: 1px solid #e0c3a5;
+    border-radius: 8px;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .contact-card {
+        padding: 1.5rem;
+    }
+    .form-control {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+}

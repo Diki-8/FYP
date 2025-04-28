@@ -1,0 +1,135 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #faf3e0; /* Warm, matching About Us */
+    color: #333;
+}
+
+/* Sign In Header */
+.signin-header {
+    background-color: #f4e1c1; /* Warm background */
+    color: #5a3e2b;
+    padding: 3rem 2rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.signin-header h1 {
+    color: #d2691e;
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+
+.signin-header p {
+    color: #6b4c3b;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+/* Sign In Card */
+.signin-card {
+    background-color: #ffffff;
+    border: 1px solid #e0c3a5;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Styling */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    font-weight: 500;
+    color: #5a3e2b;
+}
+
+.form-control {
+    border: 2px solid #e0c3a5;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #d2691e;
+    box-shadow: 0 0 8px rgba(210, 105, 30, 0.2);
+}
+
+/* Button Styles */
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #d2691e;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #a0522d;
+}
+
+/* Image Styling */
+.image-container {
+    height: 100%;
+    min-height: 400px;
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease;
+}
+
+.image-container:hover img {
+    transform: scale(1.03);
+}
+
+/* Alert Styling */
+.alert {
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
+/* Link Styles */
+a {
+    color: #d2691e;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #a0522d;
+}
+
+/* Mobile Responsive Tweaks */
+@media (max-width: 768px) {
+    .signin-header h1 {
+        font-size: 2rem;
+    }
+
+    .signin-header p {
+        font-size: 1rem;
+    }
+
+    .signin-card {
+        padding: 1.5rem;
+    }
+}

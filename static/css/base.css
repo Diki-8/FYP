@@ -1,0 +1,136 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #faf3e0;
+    color: #333;
+}
+
+/* Navbar Styling */
+.navbar {
+    padding: 0.8rem 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #f4a261 !important;
+}
+
+.navbar-nav .nav-link {
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #f4a261 !important;
+}
+
+/* Dropdown Menu Styling */
+.navbar .dropdown-menu {
+    background-color: #343a40;
+    border: none;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.navbar .dropdown-item {
+    color: white;
+}
+
+.navbar .dropdown-item:hover {
+    background-color: #f4a261;
+    color: #fff;
+}
+
+/* Footer Styling */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main content wrapper that grows to push footer down */
+body > .page-content {
+    flex: 1;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #343a40;
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+    margin-top: auto; /* Push footer to bottom when content is short */
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer h5 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #f4a261;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+footer a:hover {
+    color: #f4a261;
+}
+
+footer .social-icons i {
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease-in-out;
+}
+
+footer .social-icons i:hover {
+    color: #f4a261;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+    .navbar-nav .nav-link {
+        padding: 0.5rem;
+    }
+
+    footer {
+        padding: 1.5rem;
+    }
+}
+
+
+
+.custom-alert {
+    padding: 1rem;
+    font-size: 1rem;
+    border: none;
+  }
+  
+  /* Info messages */
+  .alert-info {
+    background-color: rgba(0, 123, 255, 0.15); /* Light blue */
+    color: #004085;
+  }
+
+  /* Success messages */
+  .alert-success {
+    background-color: rgba(40, 167, 69, 0.15); /* Light green */
+    color: #155724;
+  }
+
+  /* Warning messages */
+  .alert-warning {
+    background-color: rgba(255, 193, 7, 0.15); /* Light yellow/orange */
+    color: #856404;
+  }
+
+  /* Error messages */
+  .alert-danger, .alert-error {
+    background-color: rgba(220, 53, 69, 0.15); /* Light red */
+    color: #721c24;
+  }

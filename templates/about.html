@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}About Us | Paws Home{% endblock title %}
+
+{% block body %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/aboutus.css' %}">
+
+<!-- Header Section -->
+<div class="about-header text-center">
+    <h1 class="display-4">About Us</h1>
+    <p class="lead">Welcome to <strong>Paws Home</strong> – A Trusted Dog Boarding Service.</p>
+</div>
+
+<!-- About Us Content -->
+<div class="container my-5">
+    <div class="aboutus p-4 p-md-5 bg-white shadow-sm rounded">
+        <!-- Image Section -->
+        <div class="text-center mb-5">
+            <img src="{% static 'image/aboutus.jpg' %}" class="img-fluid rounded" alt="About Us">
+        </div>
+
+        <h2 class="text-primary mb-4">What is Dog Boarding?</h2>
+        <p class="text-muted">Dog boarding, also known as dog daycare, allows pet owners to leave their dogs at a trusted facility for a specific time. 
+           While common in developed countries, this concept is still emerging in Nepal. Our goal is to bridge this gap by providing 
+           a safe and well-managed space for dogs.</p>
+
+        <h2 class="text-primary mb-4">Our Vision</h2>
+        <p class="text-muted">We want to redefine dog care in Nepal by offering a professional and trustworthy boarding service. Our aim is to ensure 
+           every dog receives proper care, attention, and a homely environment while their owners are occupied.</p>
+
+        <h2 class="text-primary mb-4">Why Paws Home?</h2>
+        <ul class="list-unstyled">
+            <li class="mb-3">
+                <div class="d-flex align-items-center">
+                    <span class="me-3">🐾</span>
+                    <div>
+                        <strong>Safe & Comfortable Stay –</strong> A home-like environment for your dogs.
+                    </div>
+                </div>
+            </li>
+            <li class="mb-3">
+                <div class="d-flex align-items-center">
+                    <span class="me-3">🐾</span>
+                    <div>
+                        <strong>Professional Care –</strong> Well-trained staff to look after your pets.
+                    </div>
+                </div>
+            </li>
+            <li class="mb-3">
+                <div class="d-flex align-items-center">
+                    <span class="me-3">🐾</span>
+                    <div>
+                        <strong>Convenient Booking –</strong> Easy online reservations for hassle-free service.
+                    </div>
+                </div>
+            </li>
+            <li class="mb-3">
+                <div class="d-flex align-items-center">
+                    <span class="me-3">🐾</span>
+                    <div>
+                        <strong>Helping Reduce Stray Dogs –</strong> Encouraging responsible pet ownership.
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+{% endblock body %}

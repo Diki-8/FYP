@@ -1,0 +1,84 @@
+/* Page Content Styling */
+.page-content {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+/* Container Styling */
+.page-content .container {
+    margin-top: 40px;
+}
+
+/* Table Styling */
+.page-content .table {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.page-content .table thead {
+    background-color: #f4e1c1;
+    color: #5a3e2b;
+}
+
+.page-content .table th {
+    padding: 12px;
+    font-weight: bold;
+}
+
+.page-content .table td {
+    padding: 12px;
+    vertical-align: middle;
+}
+
+/* Badge Styling */
+.page-content .badge-success {
+    background-color: #28a745;
+}
+
+.page-content .badge-warning {
+    background-color: #ffc107;
+}
+
+/* Button Styling */
+.page-content .btn-outline-primary,
+.page-content .btn-outline-danger {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.page-content .btn-outline-primary:hover {
+    background-color: #d2691e;
+    color: #fff;
+}
+
+.page-content .btn-outline-danger:hover {
+    background-color: #a52a2a;
+    color: #fff;
+}
+
+/* No Bookings Found */
+.page-content .text-center {
+    font-style: italic;
+    color: #6b4c3b;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+    .page-content .container {
+        padding: 0 1rem;
+    }
+
+    .page-content .table th,
+    .page-content .table td {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    .page-content .btn-outline-primary,
+    .page-content .btn-outline-danger {
+        font-size: 0.8rem;
+    }
+}

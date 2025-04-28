@@ -1,0 +1,86 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f1ea; 
+    color: #333;
+}
+
+/* Header Section */
+.about-header {
+    background-color: #d8eadb; 
+    color: #2c3e50;
+    padding: 4rem 2rem;
+    border-radius: 8px;
+}
+
+.about-header h1 {
+    color: #388e3c; 
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+.about-header p {
+    color: #5a6f58;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+/* Content Styling */
+.container h2 {
+    color: #388e3c;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.boarding-features h3 {
+    color: #6d4c41; 
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+.boarding-features p {
+    color: #5f6368;
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+}
+
+/* List Styling */
+ul {
+    padding-left: 20px;
+    color: #4a4a4a;
+}
+
+ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Background Highlights */
+.bg-light {
+    background-color: #efe7dd !important;
+    border: 1px solid #c7b59b;
+}
+
+/* Image Styling */
+img {
+    border: 3px solid #a5c9a1;
+    border-radius: 8px;
+}
+
+/* Subtle Shadows */
+.shadow {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+    .about-header h1 {
+        font-size: 2rem;
+    }
+
+    .about-header p {
+        font-size: 1rem;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+}

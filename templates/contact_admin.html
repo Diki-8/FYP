@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Admin | Contact Messages{% endblock title %}
+
+{% block body %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/contactus.css' %}">
+
+<div class="container my-5">
+    <h1 class="text-center mb-5">Contact Messages</h1>
+    <div class="table-responsive contact-card p-4 bg-white rounded shadow">
+        <table class="table table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Message</th>
+                    <th scope="col">Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for contact in contacts %}
+                <tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td>{{ contact.name }}</td>
+                    <td>{{ contact.email }}</td>
+                    <td>{{ contact.message|truncatewords:20 }}</td>
+                    <td>{{ contact.date }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="5" class="text-center">No contact messages found.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock body %}

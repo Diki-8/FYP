@@ -1,0 +1,86 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fff8f0; 
+    color: #333;
+}
+
+/* Header Section */
+.about-header {
+    background-color: #fbeee0;
+    color: #5a3e2b;
+    padding: 4rem 2rem;
+    border-radius: 8px;
+}
+
+.about-header h1 {
+    color: #d2691e; 
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+.about-header p {
+    color: #6b4c3b;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+/* Content Styling */
+.container h2 {
+    color: #ff7043; /* Warm orange for key headings */
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.daycare-features h3 {
+    color: #4caf50; /* Calming green for feature highlights */
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+.daycare-features p {
+    color: #5f6368;
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+}
+
+/* List Styling */
+ul {
+    padding-left: 20px;
+    color: #555;
+}
+
+ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Background Highlights */
+.bg-light {
+    background-color: #fffdf9 !important;
+    border: 1px solid #e0e0e0;
+}
+
+/* Image Styling */
+img {
+    border: 3px solid #ffe0b2; /* Light border */
+    border-radius: 8px;
+}
+
+/* Subtle Shadows */
+.shadow {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+    .about-header h1 {
+        font-size: 2rem;
+    }
+
+    .about-header p {
+        font-size: 1rem;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+}
