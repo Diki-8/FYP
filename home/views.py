@@ -453,4 +453,4 @@ def edit_profile(request):
 @user_passes_test(lambda u: u.is_staff)
 def contact_admin_view(request):
     contacts = Contact.objects.all().order_by('-date')
-    return render(request, 'contact_admin.html', {'contacts': contacts})
+    return render(request, 'contact_admin.html', {'contacts': contacts}) 
